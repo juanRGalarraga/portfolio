@@ -1,25 +1,16 @@
-import { generateProjectMetadata } from '@/ai/flows/generate-project-metadata';
 import { projects } from '@/lib/data';
 import ProjectCard from '../project-card';
-import type { GenerateProjectMetadataOutput } from '@/ai/flows/generate-project-metadata';
+import type { GenerateProjectMetadataOutput } from '@/lib/data';
 
 type ProjectData = GenerateProjectMetadataOutput & {
   repoUrl: string;
 };
 
-export default async function PortfolioSection() {
-    const projectsData: ProjectData[] = [];
-
-    for (const p of projects) {
-        try {
-            const aiData = await generateProjectMetadata({ repoUrl: p.url });
-            projectsData.push({ ...aiData, repoUrl: p.url });
-        } catch (error) {
-            console.error(`Failed to fetch metadata for ${p.url}`, error);
-            // Using fallback data if AI call fails
-            projectsData.push({ ...p.fallback, technologies: p.fallback.technologies, repoUrl: p.url });
-        }
-    }
+export default function PortfolioSection() {
+    const projectsData: ProjectData[] = projects.map(p => ({
+        ...p.fallback,
+        repoUrl: p.url
+    }));
 
   return (
     <section id="projects" className="py-24 sm:py-32">

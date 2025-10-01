@@ -9,7 +9,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { GithubIcon } from './icons/github';
-import type { GenerateProjectMetadataOutput } from '@/ai/flows/generate-project-metadata';
+import type { GenerateProjectMetadataOutput } from '@/lib/data';
 
 type ProjectCardProps = GenerateProjectMetadataOutput & {
   repoUrl: string;

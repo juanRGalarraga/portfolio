@@ -28,6 +28,12 @@ export const skills = [
     { name: 'Desarrollo Frontend', icon: Code },
 ];
 
+export type GenerateProjectMetadataOutput = {
+  projectName: string;
+  description: string;
+  technologies: string[];
+};
+
 export const projects = [
   {
     url: 'https://github.com/juanRGalarraga/hosterlan-site',
