@@ -34,15 +34,10 @@ const prompt = ai.definePrompt({
   name: 'generateProjectMetadataPrompt',
   input: {schema: GenerateProjectMetadataInputSchema},
   output: {schema: GenerateProjectMetadataOutputSchema},
-  prompt: `You are an AI expert in extracting project metadata from GitHub repositories.
-
-  Given the URL of a GitHub repository, you will extract the project name, a short description, and a list of the key technologies used in the project.
-
-  Repository URL: {{{repoUrl}}}
-
-  Project Name:
-  Description:
-  Technologies:`, // Make sure to add the correct field name. Ensure you pass in as a string
+  prompt: `You are an AI expert in analyzing GitHub repositories.
+  Given the URL of a GitHub repository, you will extract the project name, a short description, and a list of the key technologies used.
+  Analyze the repository at the following URL: {{{repoUrl}}}.
+  Provide the output in the requested JSON format.`,
 });
 
 const generateProjectMetadataFlow = ai.defineFlow(
