@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { socialLinks } from '@/lib/data';
 import { GithubIcon, LinkedinIcon } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 export default function HeroSection() {
   const githubUrl = socialLinks.find(link => link.name === 'GitHub')?.url;
@@ -46,18 +47,4 @@ export default function HeroSection() {
       </div>
     </section>
   );
-}
-
-// Add a Badge component if it doesn't exist.
-function Badge({ className, ...props }: React.HTMLAttributes<HTMLDivElement> & { variant?: 'secondary' | 'default' | 'destructive' | 'outline' }) {
-  return (
-    <div
-      className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 ${
-        props.variant === 'secondary'
-          ? 'border-transparent bg-secondary text-secondary-foreground'
-          : 'border-transparent bg-primary text-primary-foreground'
-      } ${className}`}
-      {...props}
-    />
-  )
 }

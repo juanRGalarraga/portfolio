@@ -18,15 +18,19 @@ export async function submitContactForm(
   prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
+  console.log("EMAIL USER", process.env.EMAIL_USER)
+  console.log("EMAIL PASS", process.env.EMAIL_PASS)
+  debugger
   const validatedFields = contactSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
     message: formData.get('message'),
   });
+  
 
   if (!validatedFields.success) {
     return {
-      message: 'Por favor, corrige los errores en el formulario.',
+      message: validatedFields.error.errors.map((e) => e.message).join('\n'),
       status: 'error',
     };
   }
@@ -34,9 +38,7 @@ export async function submitContactForm(
   const { name, email, message } = validatedFields.data;
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.office365.com",
-    port: 587,
-    secure: false,
+    service: 'gmail',
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -46,7 +48,7 @@ export async function submitContactForm(
   const mailOptions = {
     from: email,
     to: process.env.EMAIL_USER,
-    subject: `Nuevo mensaje de ${name}`,
+    subject: `Nuevo mensaje de ${name} <${email}>`,
     text: message,
   };
 
