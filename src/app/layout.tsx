@@ -3,11 +3,11 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Juan Galarraga | Desarrollador Web Full-Stack',
+  title: 'Juan Galarraga | Desarrollador Backend',
   description:
-    'Desarrollador Web con 4+ años de experiencia en JavaScript, Node.js y React. Especialista en sistemas de alta concurrencia y arquitectura de microservicios para proyectos Fintech.',
+    'Desarrollador Backend con 3+ años de experiencia, especializado en el desarrollo de sistemas fintech. Sólidos conocimientos en PHP, Node.js, Typescript y bases de datos relacionales.',
   keywords:
-    'Desarrollador Web Freelance, Full Stack Developer, Fintech, Alta Concurrencia, Node.js, React, JavaScript, Desarrollo Software, Portfolio Web, Microservicios, Juan Galarraga',
+    'Desarrollador Backend, PHP, Node.js, TypeScript, Fintech, Microservicios, Juan Galarraga, Symfony, NestJS, PostgreSQL, MySQL',
 };
 
 export default function RootLayout({

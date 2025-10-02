@@ -2,6 +2,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import HeroSection from '@/components/sections/hero';
 import AboutSection from '@/components/sections/about';
+import ExperienceSection from '@/components/sections/experience';
 import PortfolioSection from '@/components/sections/portfolio';
 import ContactSection from '@/components/sections/contact';
 
@@ -12,6 +13,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
+        <ExperienceSection />
         <PortfolioSection />
         <ContactSection />
       </main>

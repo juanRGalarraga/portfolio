@@ -1,28 +1,20 @@
 import { projects } from '@/lib/data';
 import ProjectCard from '../project-card';
-import type { GenerateProjectMetadataOutput } from '@/lib/data';
+import type { ProjectData } from '@/lib/data';
 
-type ProjectData = GenerateProjectMetadataOutput & {
-  repoUrl: string;
-};
 
 export default function PortfolioSection() {
-    const projectsData: ProjectData[] = projects.map(p => ({
-        ...p.fallback,
-        repoUrl: p.url
-    }));
+    const projectsData: ProjectData[] = projects;
 
   return (
-    <section id="projects" className="py-24 sm:py-32">
+    <section id="projects" className="py-24 sm:py-32 bg-secondary/50">
       <div className="container mx-auto max-w-7xl px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            Portfolio: Soluciones Escalables en Acción
+            Portfolio de Proyectos
           </h2>
           <p className="mt-4 text-lg text-foreground/80">
-            Los proyectos a continuación demuestran mi capacidad para entregar
-            código limpio y arquitecturas sólidas. Puedes explorar el código
-            fuente completo en mi GitHub.
+            Estos proyectos demuestran mi capacidad para entregar código limpio y arquitecturas sólidas. Explora el código fuente en GitHub.
           </p>
         </div>
 
