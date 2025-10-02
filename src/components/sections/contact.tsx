@@ -33,9 +33,6 @@ export default function ContactSection() {
               )}
             </div>
           </div>
-          <div className="rounded-lg border bg-card p-6 shadow-lg sm:p-8">
-            <ContactForm />
-          </div>
         </div>
       </div>
     </section>
