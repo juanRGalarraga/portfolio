@@ -1,6 +1,7 @@
 'use server';
 
 import { z } from 'zod';
+import nodemailer from 'nodemailer';
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: 'El nombre debe tener al menos 2 caracteres.' }),
@@ -29,13 +30,28 @@ export async function submitContactForm(
       status: 'error',
     };
   }
-  
-  try {
-    // Here you would typically send an email, e.g., using Nodemailer or a service like Resend.
-    // For this example, we'll just log the data to the console.
-    console.log('New contact form submission:');
-    console.log(validatedFields.data);
 
+  const { name, email, message } = validatedFields.data;
+
+  const transporter = nodemailer.createTransport({
+    host: "smtp.office365.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: email,
+    to: process.env.EMAIL_USER,
+    subject: `Nuevo mensaje de ${name}`,
+    text: message,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
     return {
       message: '¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.',
       status: 'success',

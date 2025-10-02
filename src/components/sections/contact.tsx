@@ -22,7 +22,7 @@ export default function ContactSection() {
               industria.
             </p>
             <Button asChild variant="link" className="p-0 text-base">
-               <a href="#" target="_blank" rel="noopener noreferrer">
+               <a href="https://www.linkedin.com/in/galarraga-juan/" target="_blank" rel="noopener noreferrer">
                 <LinkedinIcon className="mr-2 h-5 w-5" />
                 Ver Perfil Completo en LinkedIn
               </a>
