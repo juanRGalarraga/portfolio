@@ -17,7 +17,7 @@ export default function ProjectCard({
   technologies,
   repoUrl,
 }: ProjectData) {
-  const hasRepo = repoUrl && repoUrl !== '#';
+  const hasRepo = repoUrl && repoUrl !== '';
 
   return (
     <Card className="flex h-full flex-col overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1 bg-card">

@@ -38,25 +38,25 @@ export type ProjectData = {
 
 export const projects: ProjectData[] = [
   {
-    repoUrl: 'https://github.com/juanRGalarraga/hosterlan-site',
+    repoUrl: '',
     projectName: 'Ecomdrop - Core de Dropshipping',
     description: 'Desarrollo de funcionalidades para el core de un sistema de dropshipping, trabajando en un equipo ágil con microservicios.',
     technologies: ['NestJS', 'TypeScript', 'GraphQL', 'PostgreSQL', 'Docker'],
   },
   {
-    repoUrl: 'https://github.com/juanRGalarraga/hosterlan-server',
+    repoUrl: '',
     projectName: 'Quiena - Sistema de Inversiones',
     description: 'Mantenimiento y desarrollo de un sistema de inversiones bursátiles con más de 20 mil usuarios, reescribiendo partes del core.',
     technologies: ['PHP', 'Symfony', 'MySQL', 'Doctrine', 'PHPUnit'],
   },
   {
-    repoUrl: 'https://github.com/juanRGalarraga/hosterlan-app',
+    repoUrl: '',
     projectName: 'Rebrit - Sistemas Fintech',
     description: 'Desarrollo de sistemas de otorgamiento de créditos y liderazgo de un equipo. Core multitenant con arquitectura de microservicios.',
     technologies: ['PHP', 'MySQL', 'Microservicios', 'AWS', 'jQuery'],
   },
   {
-    repoUrl: '#',
+    repoUrl: '',
     projectName: 'Proyecto Personal Actual',
     description: 'Actualmente desarrollando un proyecto personal con NestJS, GraphQL, MongoDB y Mongoose para seguir profundizando en estas tecnologías.',
     technologies: ['NestJS', 'GraphQL', 'MongoDB', 'Mongoose'],
