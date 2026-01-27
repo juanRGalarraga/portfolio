@@ -11,7 +11,7 @@ export default function ContactSection() {
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="space-y-6">
             <h2 className="font-headline text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-              Hablemos de tu Próximo Proyecto
+              Contacto
             </h2>
             <p className="text-foreground/80">
               Si buscas un desarrollador backend para un proyecto que demande experiencia en fintech, alta concurrencia y un enfoque en la calidad, estás en el lugar correcto.
